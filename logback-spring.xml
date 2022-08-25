@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
-    <logger name="com.example.xxx" level="DEBUG"/>
-    <appender name="aiAppender"
-              class="com.microsoft.applicationinsights.logback.ApplicationInsightsAppender">
+<configuration> 
+<appender name="aiappender" 
+    			class="com.microsoft.applicationinsights.ApplicationInsightsAppender">
+
+</appender>
+    <appender name="console" 
+    			class="ch.qos.logback.core.ConsoleAppender">
     </appender>
     <root level="info">
-        <appender-ref ref="aiAppender" />
+        <appender-ref ref="console" />
+        <appender-ref ref="aiappender" />
     </root>
 </configuration>
